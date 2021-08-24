@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+[[ "$DEBUG" == "true" ]] && set -x
+[[ "$STRICT" == "true" ]] && set -u
+
 set -eo pipefail
 
 case ${1} in

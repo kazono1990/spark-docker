@@ -2,22 +2,20 @@ version: '3.3'
 
 services:
   master:
-    build: .
+    image: kazono/spark-docker:latest
     hostname: master
     command: ["master"]
     environment:
       MASTER: spark://master:7077
     ports:
-      - 4040:4040
       - 6066:6066
       - 7077:7077
-      - 8080:8080
+      - 8480:8480
 
   worker:
-    build: .
-    hostname: worker
+    image: kazono/spark-docker:latest
     command: ["worker", "spark://master:7077"]
     depends_on:
       - master
     ports:
-      - 8081-8089:8081
+      - 8481-8489:8481

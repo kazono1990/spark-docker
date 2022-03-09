@@ -1,8 +1,8 @@
 FROM openjdk:11
 
-ENV SPARK_VERSION="3.1.2"
+ENV SPARK_VERSION="3.2.1"
 ENV SPARK_INSTALL_DIR="/opt/spark"
-ENV SPARK_CHECKSUM="2385cb772f21b014ce2abd6b8f5e815721580d6e8bc42a26d70bbcdda8d303d886a6f12b36d40f6971b5547b70fae62b5a96146f0421cb93d4e51491308ef5d5"
+ENV SPARK_CHECKSUM="145adacf189fecf05fba3a69841d2804dd66546b11d14fc181ac49d89f3cb5e4fecd9b25f56f0af767155419cd430838fb651992aeb37d3a6f91e7e009d1f9ae"
 ENV HADOOP_VERSION="3.2.0"
 ENV HADOOP_INSTALL_DIR="/opt/hadoop"
 ENV HADOOP_CHECKSUM="79676a7dadbc4740cb2ff4ae7af75f5b0a45b4748f217f4179ab64827b840eef58c63b9132260c5682cb28b6d12a27d4a4d09a15173aca158fb1fc3cdb0b1609"
@@ -21,13 +21,14 @@ RUN apt-get update \
         less \
         locales \
         net-tools \
+        netcat \
         python3 \
         python3-matplotlib \
         python3-numpy \
         python3-pandas \
         python3-pip \
         python3-scipy \
-        python3-simpy \
+        # python3-simpy \
         software-properties-common \
         ssh \
         vim \

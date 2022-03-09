@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   master:
-    image: kazono/spark-docker:latest
+    image: kazono/spark:3.2.1
     hostname: master
     command: ["master"]
     environment:
@@ -13,7 +13,7 @@ services:
       - 8480:8480
 
   worker:
-    image: kazono/spark-docker:latest
+    image: kazono/spark:3.2.1
     command: ["worker", "spark://master:7077"]
     depends_on:
       - master
